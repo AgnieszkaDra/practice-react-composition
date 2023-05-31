@@ -39,7 +39,6 @@ export class Table extends React.Component {
                         <TableHeaderItem>{'Tota price'}</TableHeaderItem>
                         <TableDataCell>{totalPrice}</TableDataCell>
                     </TableRow>
-                    
                 </TableFooter>
             </table>
         )
