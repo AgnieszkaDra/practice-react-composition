@@ -1,6 +1,6 @@
 import React from "react"
 
-export const TableHeader = (props) => {
+export const TableHeaderItem = (props) => {
     const {
         children
     } =props
@@ -9,4 +9,4 @@ export const TableHeader = (props) => {
     )
 }
 
-export default TableHeader
+export default TableHeaderItem

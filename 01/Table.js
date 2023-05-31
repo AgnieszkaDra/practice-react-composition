@@ -1,4 +1,5 @@
 import React from 'react';
+import TableHeader from './TableHeader';
 import TableHeaderItem from './TableHeaderItem';
 
 export class Table extends React.Component {
@@ -8,14 +9,12 @@ export class Table extends React.Component {
 
         return (
              <table>
-                <thead>
-                    <tr>
-                        <TableHeaderItem>{'Name'}</TableHeaderItem>
-                        <TableHeaderItem>{'Quantity'}</TableHeaderItem>
-                        <TableHeaderItem>{'Price'}</TableHeaderItem>
-                    </tr>
-                </thead>
-             </table>
+              <TableHeader>
+                <TableHeaderItem>{'Name'}</TableHeaderItem>
+                <TableHeaderItem>{'Quantity'}</TableHeaderItem>
+                <TableHeaderItem>{'Price'}</TableHeaderItem>
+              </TableHeader>
+            </table>
         )
        
     }
