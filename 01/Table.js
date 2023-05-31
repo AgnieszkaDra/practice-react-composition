@@ -4,11 +4,15 @@ import TableHeaderItem from './TableHeaderItem';
 import TableBody from './TableBody';
 import TableRow from './TableRow';
 import TableDataCell from './TableDataCell';
+import TableFooter from './TableFooter';
 
 export class Table extends React.Component {
     render() {
         const {data} = this.props;
         console.log(data);
+        const totalPrice = data.reduce(function(acc, obj){
+            return acc + obj.price * obj.quantity
+        }, 0)
 
         return (
              <table>
@@ -30,6 +34,13 @@ export class Table extends React.Component {
                         )
                     })}
                 </TableBody>
+                <TableFooter>
+                    <TableRow>
+                        <TableHeaderItem>{'Tota price'}</TableHeaderItem>
+                        <TableDataCell>{totalPrice}</TableDataCell>
+                    </TableRow>
+                    
+                </TableFooter>
             </table>
         )
        
