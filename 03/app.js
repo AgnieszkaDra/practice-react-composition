@@ -27,12 +27,22 @@ class App extends React.Component {
                 {data.map(product => {
                            return (
                                     <>
-                                   <Product product={product} add={this.addProduct}></Product>
+                                   <Product   key={product.id} product={product} add={this.addProduct}></Product>
                                     </>
                                 )
                             })}
                 </Category>
-                <Cart />
+                <Cart>
+                {this.state.cart.map(product => {
+                        return (
+                            <Product 
+                                key={product.id} 
+                                product={product}
+                                
+                            />
+                        )
+                    })}
+                </Cart>
             </section>
         )
     }
