@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 
 import Category from './Category';
 import Cart from './Cart';
+import Product from './Product';
 
 import data from './data.json';
 
@@ -14,7 +15,15 @@ class App extends React.Component {
     render() {
         return (
             <section>
-                <Category />
+                <Category>
+                {data.map(product => {
+                           return (
+                                    <>
+                                   <Product product={product}></Product>
+                                    </>
+                                )
+                            })}
+                </Category>
                 <Cart />
             </section>
         )
