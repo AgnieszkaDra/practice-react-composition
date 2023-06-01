@@ -11,6 +11,14 @@ class App extends React.Component {
     state = {
         cart: [],
     }
+
+    addProduct = (product) => {
+        this.setState(state => {
+            return {
+                cart: [...state.cart, product]
+            }
+        }) 
+    }
     
     render() {
         return (
@@ -19,7 +27,7 @@ class App extends React.Component {
                 {data.map(product => {
                            return (
                                     <>
-                                   <Product product={product}></Product>
+                                   <Product product={product} add={this.addProduct}></Product>
                                     </>
                                 )
                             })}
