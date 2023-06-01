@@ -9,11 +9,31 @@ class App extends React.Component {
         filesList: [],
     }
 
+    addFile = (e) => {
+        const files = e.target.files;
+        console.log(files)
+        Object.keys(files).forEach(i => {
+            const file = files[i];
+            const name = file.name;
+            const size = file.size;
+            const reader = new FileReader();
+            
+            reader.onload = e => {
+                const result = e.target.result
+                this.setState(state => {
+                    const newList = [...state.filesList, {name: name, size: size, content: result}];
+                    return {filesList: newList}
+                })
+            }
+            reader.readAsText(file, 'UTF-8');
+        })
+    }
+
     render() {
         return (
             <section>
-                <File />
-                <List />
+                <File addFile={this.addFile}/>
+                <List list={this.state.filesList}/>
             </section>
         )
     }

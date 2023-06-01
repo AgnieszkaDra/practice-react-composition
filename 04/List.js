@@ -2,7 +2,15 @@ import React from 'react';
 
 class List extends React.Component {
     render() {
-        return <ul>Lista plików</ul>
+        const {list} = this.props;
+        return <ul>{list.map(element => {
+           return <><li>{element.name}</li>
+                <li>{element.size}</li>
+                <li>{element.content}</li>
+            </>
+        } 
+            )
+    }</ul>
     }
 }
 
