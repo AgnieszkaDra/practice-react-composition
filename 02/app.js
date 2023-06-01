@@ -24,7 +24,7 @@ class App extends React.Component {
         return (
             <section>
                 <Form handleSubmit={this.addUser}/>
-                <List items={ usersList } />
+                <List elements={ usersList } />
             </section>
         )
     }
